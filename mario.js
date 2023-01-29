@@ -7,13 +7,21 @@ function printPyramid(height) {
 	
     for (let i = 1; i <= height; i++)
 	{
-		let space = " ";
+		let space = ".";
 		
 		let brick = "#";
 		
 		let layer = space.repeat(height-i)+brick.repeat(i+1);
-		
-		console.log(layer);
+
+		const rowStr = document.createElement("p");
+
+		const node = document.createTextNode(layer);
+
+		rowStr.appendChild(node);
+
+		const element = document.getElementById("pyramid");
+
+		element.appendChild(rowStr);
 	}
 
 }

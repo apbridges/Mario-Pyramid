@@ -1,17 +1,22 @@
 
-let userInput = prompt('How tall should the Mario pyramid be? ');
+const element = document.getElementById("pyramidBtn");
+element.addEventListener("click", determineHeightAndThenDrawPyramid);
 
-printPyramid(userInput);
+function determineHeightAndThenDrawPyramid() {
+	var heightInput = document.getElementById("height").value;
+	printPyramid(heightInput);
+}
 
 function printPyramid(height) {
-	
-    for (let i = 1; i <= height; i++)
-	{
+
+	document.getElementById("pyramid").innerHTML = "";
+
+	for (let i = 1; i <= height; i++) {
 		let space = ".";
-		
+
 		let brick = "#";
-		
-		let layer = space.repeat(height-i)+brick.repeat(i+1);
+
+		let layer = space.repeat(height - i) + brick.repeat(i + 1);
 
 		const rowStr = document.createElement("p");
 

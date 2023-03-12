@@ -1,65 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		#pyramidContainer {
-			background-color: whitesmoke;
-			margin: auto 10%;
-			border: medium solid #d14f98;
-			border-radius: 10px;
-			overflow: hidden;
-		}
+    <style>
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+        }
 
-		#pyramidOptions {
-			background-color: lightgray;
-		}
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
 
-		#sliderValue {
-			font-weight: bold;
-		}
-		
-		#pyramid {
-			white-space: pre;
-			line-height: 0;
-			font-size: 30px;
-			color: #d14f98;
-		}
+        .invalid-field {
+            border: 1px solid red;
+        }
 
-		body {
-			font-family: "Courier New", monospace;
-			text-align: center;
-			margin: 2% 25% 2% 25%;
-		}
-
-		h1 {
-			background-color: #d14f98;
-			padding: 25px 20px 25px 20px;
-			color: white;
-		}
-
-	</style>
+        .error-message {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-	<h1>Pyramid Slide</h1>
-	<br>
-	<div id = "pyramidContainer">
-		<div id="pyramidOptions">
-			<br>
-			<label>Brick Symbol: </label>
-			<select id="brickSelect">
-				<option value="#">#</option>
-				<option value="@">@</option>
-				<option value="X">X</option>
-				<option value="$">$</option>
-			</select>
-			<label>How high? </label>
-			<input type="range" min="1" max="20" value="10" id="sliderHeight" />
-			<label id="sliderValue"></label>
-			<br><br>
-		</div>
-		<div id="pyramid"></div>
-	</div>
-	<script src="mario.js"></script>
-</body>
+    <h1>Mario 4</h1>
 
+    <p>When you say</p>
+    <p><strong>Draw a pyramid</strong></p>
+    <p>I say:</p>
+    <br>
+
+    <form id="draw-form">
+        <label>
+            How high?
+            <input type="text" id="height"/>
+            <label class="error-message">
+                <!-- If there was a user error, we will put a message in here -->
+            </label>
+        </label>
+        <br><br>
+        <input type="submit" value="Draw a pyramid"/>
+    </form>
+
+    <br><br>
+
+    <div id="pyramid"></div>
+
+    <script src="mario.js"></script>
+</body>
 </html>
